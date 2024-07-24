@@ -126,16 +126,16 @@ fetchCategory()
         // Récupére l'élément du DOM
         const filterLinks = filterLinksContainer.querySelectorAll('.filters');
 
-        // Ajoute un gestionnaire d'événements pour filtrer les projets en fonction de la catégorie sélectionnée.
+        // Ajoute un gestionnaire d'événements pour filtrer les projets en fonction de la catégorie sélectionnée
         filterLinks.forEach(link => {
 
             link.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // Boucle sur les donnée de la noteList et on parcourt tous les liens de filtre et on leur enlève la classe "active".
+                // Boucle sur les donnée de la noteList et on parcourt tous les liens de filtre et on leur enlève la classe "active"
                 filterLinks.forEach(lnk => lnk.classList.remove('active'));
 
-                // Le lien de filtre actuellement cliqué se voit attribuer la classe "active".
+                // Le lien de filtre actuellement cliqué se voit attribuer la classe "active"
                 this.classList.add('active');
                 
                 // Filtrage des projets en fonction de la catégorie sélectionnée
@@ -179,7 +179,7 @@ if (logoutLink) {
     // Supprime le token de l'utilisateur du stockage local
     localStorage.removeItem("token");
 
-    // Redirigez l'utilisateur vers la page d'accueil
+    // Redirige l'utilisateur vers la page d'accueil
     window.location.href = 'login.html';
   });
 
@@ -187,7 +187,7 @@ if (logoutLink) {
   
   if (localStorage.getItem("token")) {
 
-    // Affichez le mode édition
+    // Affiche le mode édition
     showElements([modeEditOverlay]);
 
     editModif.classList.remove('display-none');
@@ -196,11 +196,11 @@ if (logoutLink) {
     header.style.marginTop = '109px';
     portfoliotext.style.marginBottom = '100px';
 
-    // Sélectionnez tous les icônes avec aria-hidden="true" et définissez-les sur "false"
+    // Sélectionne toutes les icônes avec aria-hidden="true" et définissez-les sur "false"
     const iconsWithAriaHidden = document.querySelectorAll('[aria-hidden="true"]');
     updateAriaHidden(iconsWithAriaHidden, "false");
 
-    // L'utilisateur est connecté, masquez complètement les filtres
+    // L'utilisateur est connecté, masquer complètement les filtres
     filterLinkContainer.style.display = "none";
 
   } else {
@@ -267,7 +267,7 @@ fileInput.addEventListener('change', () => {
   previewPicture();
 });
 
-// Supprimer la prévisualisation
+// Supprime la prévisualisation
 previewImg.addEventListener('click', () => {
   removePreviewPicture();
 });

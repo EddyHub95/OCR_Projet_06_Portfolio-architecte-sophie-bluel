@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Si le formulaire est valide
-    // Vérifie si les champs d'email et de mot de passe ne contiennent pas la classe error-input, ce qui indiquerait qu'ils sont valides. Ensuite, elle récupère les valeurs de ces champs.
+    // Vérifie si les champs d'email et de mot de passe ne contiennent pas la classe error-input, ce qui indiquerait qu'ils sont valides. 
+    // Ensuite, elle récupère les valeurs de ces champs
     if (!emailInput.classList.contains('error-input') && !passwordInput.classList.contains('error-input')) {
       const email = emailInput.value;
       const password = passwordInput.value;

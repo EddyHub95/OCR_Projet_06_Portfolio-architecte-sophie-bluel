@@ -1,10 +1,10 @@
-// Fetch Works : Fonction pour récupérer les projets via une API.
+// Fetch Works : Fonction pour récupérer les projets via l'API.
 async function fetchWorks() {
     const response = await fetch('http://localhost:5678/api/works');
     return await response.json();
 }
 
-// Fetch Categories : Fonction pour récupérer les catégories via une API.
+// Fetch Categories : Fonction pour récupérer les catégories via l'API.
 async function fetchCategory () {
     const response = await fetch('http://localhost:5678/api/categories');
     return await response.json();

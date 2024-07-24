@@ -170,7 +170,7 @@ function resetForm() {
 }
 
 // Affiche un message d'erreur sous un champ de formulaire. 
-//Elle ajoute une classe error-input à l'élément et insère un paragraphe contenant le message d'erreur.
+// Elle ajoute une classe error-input à l'élément et insère un paragraphe contenant le message d'erreur.
 function showValidationError(inputElement, submit = true, text = 'Ce champ doit être rempli') {
     const errorElement = inputElement.parentNode.querySelector(`.error-message[data-input="${inputElement.id}"]`);
     if (errorElement) {
