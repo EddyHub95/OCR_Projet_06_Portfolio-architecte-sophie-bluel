@@ -1,7 +1,7 @@
 // 1. Récupération et affichage des projets
 // Appel Fetch works pour récupérer les données des projets.
-fetchWorks()
-  .then(data => {
+  fetchWorks()
+    .then(data => {
 
         // Sélection des éléments du DOM
         const portfolioSection = document.getElementById('portfolio');

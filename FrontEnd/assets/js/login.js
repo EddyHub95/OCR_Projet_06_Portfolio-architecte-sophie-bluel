@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         password: password,
       };
 
-      // appel la fonction fetchlogin avec le paramétre (data)
+      // appel la fonction fetchlogin avec les données de connexion (parametre DATA).
       fetchLogin(data)
         .then(response => {
           // Si la connexion réussit, traite la réponse
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Récupère de l'élément du DOM
+  // Récupère le lien de connexion par sa classe login-link.
   const loginLink = document.querySelector(".login-link");
 
   // Récupère le nom de la page actuellement affichée dans l'URL

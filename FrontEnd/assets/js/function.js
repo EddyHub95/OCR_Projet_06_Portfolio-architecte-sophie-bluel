@@ -25,7 +25,7 @@ function showElements(elements) {
     });
 }
   
-// Fonction basculer l'affichage des éléments
+// Fonction basculer l'affichage d'une liste d'éléments du DOM
 function toggleElements(elements, visible) {
     elements.forEach(element => {
       if (element && element.classList) {
@@ -83,35 +83,35 @@ function Updatewithdata(project) {
   const { id, title, imageUrl, categoryId } = project;
 
   // Galerie principale
-  const gallery = document.getElementById('portfolio').querySelector('.gallery');
+  const gallery = document.getElementById('portfolio').querySelector('.gallery'); //Sélectionne l'élément gallery à l'intérieur de l'élément avec l'ID portfolio.
   const figure = document.createElement('figure');
   figure.dataset.category = categoryId;
   figure.dataset.projectId = id;
 
   const image = document.createElement('img');
   image.src = imageUrl;
-  image.alt = title;
+  image.alt = title; //Assigne title à l'attribut alt de image
 
   const figcaption = document.createElement('figcaption');
   figcaption.textContent = title;
 
   // Ajout dans galerie principale
-  figure.appendChild(image);
+  figure.appendChild(image);   //Ajoute l'élément image comme enfant de figure
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
 
   // Galerie modale
-  const modalOverlay = document.getElementById('modal-overlay');
-  const modalGallery = modalOverlay.querySelector('.modal-gallery');
+  const modalOverlay = document.getElementById('modal-overlay'); //Sélectionne l'élément avec l'ID modal-overlay
+  const modalGallery = modalOverlay.querySelector('.modal-gallery'); //Sélectionne l'élément modal-gallery à l'intérieur de modalOverlay.
   const modalGalleryDiv = document.createElement('div');
   modalGalleryDiv.style.position = 'relative';
 
   const modalGalleryImg = document.createElement('img');
-  modalGalleryImg.src = imageUrl;
+  modalGalleryImg.src = imageUrl; //Assigne imageUrl à l'attribut src de modalGalleryImg.
   modalGalleryImg.alt = title;
 
   // Création du lien de suppression pour la galerie modale
-  const trashButton = document.createElement('a');
+  const trashButton = document.createElement('a'); //Crée un nouvel élément a pour le bouton de suppression.
   trashButton.classList.add('delete-icon');
   trashButton.dataset.projectId = id;
 
@@ -120,7 +120,7 @@ function Updatewithdata(project) {
   trashIcon.classList.add('fa-solid', 'fa-trash-can', 'fa-2xs');
 
   // Ajout dans la galerie modale
-  trashButton.appendChild(trashIcon);
+  trashButton.appendChild(trashIcon); //Ajoute trashIcon comme enfant de trashButton.
   modalGalleryDiv.appendChild(modalGalleryImg);
   modalGalleryDiv.appendChild(trashButton);
   modalGallery.appendChild(modalGalleryDiv);
@@ -169,7 +169,7 @@ function resetForm() {
   disableSubmit();
 }
 
-// Affiche un message d'erreur sous un champ de formulaire. 
+// Affiche un message d'erreur sous le champ de formulaire. 
 // Elle ajoute une classe error-input à l'élément et insère un paragraphe contenant le message d'erreur.
 function showValidationError(inputElement, submit = true, text = 'Ce champ doit être rempli') {
     const errorElement = inputElement.parentNode.querySelector(`.error-message[data-input="${inputElement.id}"]`);
